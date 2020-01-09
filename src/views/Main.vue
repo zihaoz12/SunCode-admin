@@ -6,8 +6,8 @@
         <template slot="title"><i class="el-icon-message"></i>Data Manager</template>        
         <el-menu-item-group>
           <template slot="title">Item</template>
-          <el-menu-item index="/items/create">Create New Item</el-menu-item>
-          <el-menu-item index="/items/list">Items List</el-menu-item>
+          <el-menu-item index="/houses/create">Create New Item</el-menu-item>
+          <el-menu-item index="/houses/list">Items List</el-menu-item>
         </el-menu-item-group>
       </el-submenu>
 

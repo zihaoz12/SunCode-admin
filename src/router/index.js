@@ -14,9 +14,9 @@ const router = new Router({
             name:'main',
             component: Main,
             children:[
-                {path:'/items/create',component: ItemEdit},
-                {path:'/items/list',component: ItemList},
-                {path:'/items/edit/:id',component: ItemEdit, props: true},
+                {path:'/houses/create',component: ItemEdit},
+                {path:'/houses/list',component: ItemList},
+                {path:'/houses/edit/:id',component: ItemEdit, props: true},
             ]
         }
     ]
