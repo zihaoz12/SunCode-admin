@@ -4,7 +4,7 @@
             <el-table :data="houses">
                 <el-table-column prop="_id" label="ID" width="240">
                 </el-table-column>  
-                <el-table-column prop="addres" label="Address" >
+                <el-table-column prop="address" label="Address" >
                 </el-table-column> 
                 <el-table-column prop="state" label="State" >
                 </el-table-column> 
@@ -39,7 +39,27 @@ export default {
         async fetch(){
             const res = await this.$http.get('houses')
             this.houses = res.data
-            window.console.log('res',res.data)
+        },
+        async remove(row){
+              this.$confirm(`Your action will remove category: ${row._id}`, 'Warning', {
+                confirmButtonText: 'Continue',
+                cancelButtonText: 'Cancel',
+                type: 'warning'
+            }).then(async () => {
+                    const res = await this.$http.delete(`houses/${row._id}`);
+                    window.console.log("delete data:",res)
+                    this.$message({
+                    type: 'success',
+                    message: 'Delete Successfully!'
+                });
+                this.fetch(); 
+            }).catch(() => {
+                    this.$message({
+                    type: 'info',
+                    message: 'Cancel'
+                });  
+                   
+            });
         }
     },
     created(){
