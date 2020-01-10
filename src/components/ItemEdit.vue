@@ -11,7 +11,17 @@
             <el-form-item label=" House State" >
                 <el-input v-model="model.state"></el-input>
             </el-form-item>
-            
+            <el-form-item label="House Image">
+                <el-upload
+                    class="avatar-uploader"
+                    :action="$http.defaults.baseURL + '/upload'"
+                    :show-file-list="false"
+                    :on-success="res => $set(model, 'productImage1', res.url)"
+                >
+                    <img v-if="model.productImage1" :src="model.productImage1" class="avatar">
+                        <i v-else class="el-icon-plus avatar-uploader-icon"></i>
+                </el-upload>
+            </el-form-item>
            
             
             <el-form-item>
@@ -49,7 +59,7 @@ export default {
         },
         async fetch(){
             const res = await this.$http.get(`houses/${this.id}`);
-            this.model = res.data
+            this.model = res.data;
         }
     },
     created(){

@@ -8,9 +8,9 @@
                 </el-table-column> 
                 <el-table-column prop="state" label="State" >
                 </el-table-column> 
-                <el-table-column prop="icon" label="Item Icon" >
+                <el-table-column prop="productImage1" label="Image 1" >
                     <template v-slot="scope">
-                        <img :src="scope.row.icon" style="height:3rem">
+                        <img :src="scope.row.productImage1" style="height:3rem">
                     </template>
                 </el-table-column> 
                 <el-table-column fixed="right" label="Options" width="180">
