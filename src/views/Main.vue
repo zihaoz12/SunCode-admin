@@ -9,6 +9,12 @@
           <el-menu-item index="/houses/create">Create New Item</el-menu-item>
           <el-menu-item index="/houses/list">Items List</el-menu-item>
         </el-menu-item-group>
+
+        <el-menu-item-group>
+          <template slot="title">Admins</template>
+          <el-menu-item index="/admins/create">Create New Admin</el-menu-item>
+          <el-menu-item index="/admins/list">Admins List</el-menu-item>
+        </el-menu-item-group>
       </el-submenu>
 
       

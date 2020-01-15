@@ -45,9 +45,9 @@ export default {
         async save(){
             let res
             if(this.id){
-                 res = await this.$http.put(`houses/${this.id}`, this.model)
+                 res = await this.$http.put(`rest/houses/${this.id}`, this.model)
             }else{
-                 res = await this.$http.post('houses', this.model)
+                 res = await this.$http.post('rest/houses', this.model)
             }   
             this.$router.push('/houses/list')
             this.$message({
@@ -58,7 +58,7 @@ export default {
             window.console.log(res);
         },
         async fetch(){
-            const res = await this.$http.get(`houses/${this.id}`);
+            const res = await this.$http.get(`rest/houses/${this.id}`);
             this.model = res.data;
         }
     },
