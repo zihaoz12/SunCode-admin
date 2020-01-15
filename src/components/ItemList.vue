@@ -47,7 +47,7 @@ export default {
                 type: 'warning'
             }).then(async () => {
                     const res = await this.$http.delete(`houses/${row._id}`);
-                    window.console.log("delete data:",res)
+                    window.console.log("delete data:",res.data)
                     this.$message({
                     type: 'success',
                     message: 'Delete Successfully!'

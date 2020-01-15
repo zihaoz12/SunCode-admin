@@ -10,6 +10,10 @@ Vue.use(Router)
 const router = new Router({
     routes:[
         {
+            path:'/login',
+            component:()=>import('../views/Login.vue')
+        },
+        {
             path:'/',
             name:'main',
             component: Main,
@@ -17,8 +21,10 @@ const router = new Router({
                 {path:'/houses/create',component: ItemEdit},
                 {path:'/houses/list',component: ItemList},
                 {path:'/houses/edit/:id',component: ItemEdit, props: true},
+                {path:'/about',component:()=>import('../views/About.vue')}
             ]
         }
+        
     ]
     
 })
