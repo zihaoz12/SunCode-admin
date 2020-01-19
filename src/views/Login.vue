@@ -25,7 +25,16 @@ export default {
     },
     methods:{
         async login(){
-            window.console.log("Hello Login!!")
+            const res =  await this.$http.post('/login', this.model)
+            localStorage.token = res.data.token
+            localStorage.currentUser = res.data.username
+            this.$router.push('/')
+            this.$message({
+                type: 'success',
+                message: 'Login successfully !'
+            })
+            const currentAdmin = localStorage.currentUser
+            window.console.log(currentAdmin)
         }
     }
 }
