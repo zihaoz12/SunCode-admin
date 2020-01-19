@@ -5,6 +5,9 @@
             <el-form-item label="Username" >
                 <el-input v-model="model.username"></el-input>
             </el-form-item>
+            <el-form-item label="Email" >
+                <el-input v-model="model.email"></el-input>
+            </el-form-item>
             <el-form-item label=" password" >
                 <el-input type="password" v-model="model.password"></el-input>
             </el-form-item>

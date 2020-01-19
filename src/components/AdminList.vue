@@ -6,6 +6,8 @@
                 </el-table-column> 
                 <el-table-column prop="username" label="Admin username" >
                 </el-table-column> 
+                <el-table-column prop="email" label="Admin Email" >
+                </el-table-column>
                 <el-table-column fixed="right" label="Options" width="180">
                     <template v-slot="scope">
                         <el-button type="text" size="small"

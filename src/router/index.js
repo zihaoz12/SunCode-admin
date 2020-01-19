@@ -8,13 +8,17 @@ import ItemEdit from '../components/ItemEdit.vue'
 import AdminList from '../components/AdminList.vue'
 import AdminEdit from '../components/AdminEdit.vue'
 
+import Login from '../views/Login.vue'
+
 Vue.use(Router)
 
 const router = new Router({
     routes:[
         {
             path:'/login',
-            component:()=>import('../views/Login.vue')
+            name:'login',
+            component:Login,
+            meta:{isPublic: true}
         },
         {
             path:'/',
@@ -35,6 +39,15 @@ const router = new Router({
         
     ]
     
+})
+
+router.beforeEach((to, from, next)=>{
+    if(!to.meta.isPublic && !localStorage.token){
+        window.console.log('Need to Login!');
+        return next('/login');
+        
+    }
+    next()
 })
 
 
