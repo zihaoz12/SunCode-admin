@@ -24,6 +24,7 @@
   
   <el-container>
     <el-header style="text-align: right; font-size: 12px">
+      <span>Hello {{ currentUser }}</span>
       <el-dropdown>
         <i class="el-icon-setting" style="margin-right: 15px"></i>
         <el-dropdown-menu slot="dropdown">
@@ -65,6 +66,7 @@
         number: '123456789'
       };
       return {
+        currentUser:'',
         tableData: Array(20).fill(item)
       }
     },
@@ -72,6 +74,11 @@
       async LogOut(){
         localStorage.clear();
         window.location.href='/';
+      }
+    },
+    mounted(){
+      if(localStorage.currentUser){
+        this.currentUser = localStorage.currentUser
       }
     }
   };
